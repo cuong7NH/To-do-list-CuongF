@@ -137,13 +137,19 @@ body {
     transition: 0.4s;
     border-bottom-right-radius: 7px;
     border-top-right-radius: 7px;
+    overflow: hidden;
 }
-.submit-wrapper a {
+.submit-wrapper button {
     display: block;
     height: 100%;
     position: relative;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #ffa801;
 }
-.submit-wrapper a svg {
+.submit-wrapper button svg {
 
     position: absolute;
     font-size: 4rem;
@@ -154,8 +160,9 @@ body {
     color: #fff;
     
 }
-.submit-wrapper:hover {
+.submit-wrapper button:hover {
     background-color: #ff9f1a;
+    opacity: 0.9;
 }
 
 /* list works */
