@@ -111,7 +111,7 @@ function renderWorks(worksList) {
 
 // delete Works
 
-
+// clear all
 const clearAll = document.querySelector('#clear-all');
 
 clearAll.addEventListener('click', (e) => {
@@ -128,6 +128,7 @@ clearAll.addEventListener('click', (e) => {
     
 });
 
+// clear Completed Works
 const clearCompletedWorks = document.querySelector('#clear-works-done');
 
 clearCompletedWorks.addEventListener('click', (e) => {
@@ -143,13 +144,41 @@ clearCompletedWorks.addEventListener('click', (e) => {
                 allWorks[i].style.display = 'none';
             }, 300);
 
-            worksList.splice(i,1);
+            // up date storage
+            worksList.splice(i, 1);
 
             localStorage.setItem('worksList', JSON.stringify(worksList));
         }  
 
     }
 });
+
+// clear one work 
+
+
+worksListContainer.addEventListener('mouseover', (e) => {
+    const allTrashBtn =  document.querySelectorAll('.list-works li a.delete-btn');
+    
+    for(let i = 0; i < allTrashBtn.length; i++)  {
+        allTrashBtn[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            allTrashBtn[i].parentElement.classList.add('delete');
+            setTimeout(() => {
+                allTrashBtn[i].parentElement.style.display = 'none';
+            }, 300);
+            // update storage
+            worksList.splice(i, 1);
+
+            localStorage.setItem('worksList', JSON.stringify(worksList));
+        });
+    }
+    
+});
+
+
+
+
+
 
 
 // completed works
@@ -160,3 +189,6 @@ worksListContainer.addEventListener('click', (e) => {
 
     }
 });
+
+
+// 
