@@ -5,4 +5,6 @@ To Do List CuongF
 Build App To Do list with html css js
 .
 
-.animation add work k nhu y
+Preview:
+
+https://nguyencuong2712.github.io/To-do-list-CuongF/
